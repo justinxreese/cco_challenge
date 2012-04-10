@@ -1,0 +1,24 @@
+{
+    "shelves": [
+        {
+            "row": "Red",
+            "capacity": 45,
+            "visibility": 0.8
+        },
+        {
+            "row": "Blue",
+            "capacity": 40,
+            "visibility": 1.2
+        },
+        {
+            "row": "Green",
+            "capacity": 40,
+            "visibility": 1.0
+        },
+        {
+            "row": "Yellow",
+            "capacity": 45,
+            "visibility": 0.7
+        }
+    ]
+}
