@@ -19,13 +19,28 @@ class ShelfStocker
   end
 
   def fill_shelves
-    @shelves.sort_by{|x| -1*x["visibility"]}.each do |shelf|
-      puts shelf['row']
-      @stock.sort_by!{|x| -1*x['value']}.delete_if do |product|
-        puts product['name']
-        true
+    # Stock the most visible shelf first
+    @shelves.sort_by{|x| -1*x['visibility']}.each do |shelf|
+      capacity = shelf['capacity']
+
+      # with the most valuable item
+      @stock.sort_by!{|x| -1*x['value']}.delete_if do |item|
+        # as long as it fits
+        if item['size'] <= capacity
+          capacity -= item['size']
+          puts item['name']
+          true
+        else
+          # If it doesn't fit, keep it as stock
+          false
+        end
       end
+
+      puts '^== '+shelf['row']+' ==^ ('+capacity.to_s+'/'+shelf['capacity'].to_s+')'
+
     end
+
+    puts @stock.size.to_s+" left over items"
   end
 
 end
