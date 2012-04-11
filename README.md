@@ -47,3 +47,18 @@ put it.
 
 This was written with Ruby 1.9.2 and requires rubygems and the JSON
 gem.
+
+The command line interface assumes the products file will come before
+the shelves file. See below for how to properly run the program.
+
+The program assumes that the file sent in will be JSON.
+
+## How to use it
+
+To use this program, simply run the stock.rb file with ruby
+
+`ruby stock.rb`
+
+The program also accepts command line input for data files.
+
+`ruby stock.rb dat/products.json dat/shelves.json`
