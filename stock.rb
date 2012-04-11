@@ -1,8 +1,16 @@
 require './lib/shelf_stocker.rb'
 
+if ARGV.empty?
+  products_path = 'dat/products.json'
+  shelves_path = 'dat/shelves.json'
+else
+  products_path = ARGV[0]
+  shelves_path = ARGV[1]
+end
+
 begin
-  products = File.new('dat/products.json') 
-  shelves = File.new('dat/shelves.json')
+  products = File.new products_path
+  shelves = File.new shelves_path
 rescue Exception => e
   puts e
   exit
