@@ -12,7 +12,7 @@ shelf will sell.
 
 I'm most familiar with, and love using, Ruby - so it was my immediate
 choice when building this project. I also used git to manage the changes
-to this project. I don't expect I'll have to roll back any changes, but 
+to this project. While I don't expect I'll have to roll back any changes,
 it is nice to have a commit history to show my development style and
 workflow.
 
@@ -22,26 +22,27 @@ parsed into HTML by GitHub and looks great in plain text editors (I'm
 
 ## Design
 
-Like years ago, when I was a stock boy at K-Mart, this utility would 
-need one role to check the inventory, check shelves, and stock shelves. 
+Like years ago, when I was a stock boy at K-Mart, this utility will need 
+to serve roles checking inventory as well as checking and stocking shelves. 
 The best way to achieve that in code was to create a class to fulfill 
-this role through a number of tasks. I then created an instance (me?) 
-to stock the shelves in a particular script (workday? Am I taking this 
-metaphor too far?) with a particular set of inputs (shipment? okay, 
-now I'm *definitely* taking the metaphor too far).
+this role through tasks. I created a script containing an instance of
+this class to stock the shelves with a particular set of inputs.
 
 I've always found that real world metaphors make designing a project
 much simpler, so the initial structure of the application was the 
 easiest part. The most challenging part of the exercise was creating 
-a way to **best** stock the shelves.
+a way to **best** stock the shelves. I solved the problem iteratively.
+First, I filled the shelves with no regard for their capacity or the
+size of the products. I then worked the size of the product into the
+logic and the entire thing came together.
 
 The most fun aspect, as it usually is for me, was making my code as
 small and efficient as possible while maintaining readability. Thinking
-this way led me to approach the project as a way to fill empty shelves
-rather than a way to empty a stock room. This maximizes efficiency,
-because the program stops when there is no shelf space remaining. There
-is no point to looking at each item in stock if there is no place to 
-put it.
+this way led to my approach where the project was a way to fill empty 
+shelves rather than a way to empty a stock room. This solution 
+maximizes efficiency, because the program stops when there is no shelf 
+space remaining. There is no point to looking at each item in stock if 
+there is no place to put it.
 
 ## Dependencies and limitations
 
